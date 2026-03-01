@@ -1,27 +1,39 @@
-import psutil
+import requests
 import time
+from datetime import datetime
 from colorama import Fore, Style, init
+from box import ConfigBox # Para manejar diccionarios de forma elegante
 
-# Inicializar colorama para soporte de caracteres y colores en terminal
+# Inicializar colorama
 init(autoreset=True)
 
-def monitor_system():
-    print(Fore.CYAN + "=== Docker System Monitor ===")
+# Configuración usando ConfigBox (Pure Python)
+config = ConfigBox({
+    "url": "https://www.google.com",
+    "interval": 5,
+    "timeout": 2
+})
+
+def check_health():
+    print(Fore.CYAN + f"=== Monitoring: {config.url} ===")
+    
     try:
         while True:
-            cpu_usage = psutil.cpu_percent(interval=1)
-            ram_usage = psutil.virtual_memory().percent
+            now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            start_time = time.time()
             
-            # Determinar color basado en la carga
-            cpu_color = Fore.RED if cpu_usage > 80 else Fore.GREEN
-            ram_color = Fore.RED if ram_usage > 80 else Fore.GREEN
-
-            print(f"{Fore.YELLOW}CPU:{cpu_color} {cpu_usage}% {Style.RESET_ALL} | "
-                  f"{Fore.YELLOW}RAM:{ram_color} {ram_usage}%")
+            response = requests.get(config.url, timeout=config.timeout)
+            duration = round((time.time() - start_time) * 1000, 2)
             
-            time.sleep(2)
+            status_color = Fore.GREEN if response.status_code == 200 else Fore.RED
+            
+            print(f"[{now}] Status: {status_color}{response.status_code}{Style.RESET_ALL} | "
+                  f"Latency: {Fore.YELLOW}{duration}ms")
+            
+            time.sleep(config.interval)
+            
     except KeyboardInterrupt:
-        print(Fore.MAGENTA + "\nMonitor detenido por el usuario.")
+        print(Fore.MAGENTA + "\nMonitor finalizado por el usuario.")
 
 if __name__ == "__main__":
-    monitor_system()
+    check_health()
