@@ -1,0 +1,3 @@
+services:
+  python_script:
+    build: .
