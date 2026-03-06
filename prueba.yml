@@ -1,0 +1,13 @@
+services:
+  web_1:
+    image: nginx:alpine
+    deploy:
+      replicas: 5
+    ports:
+      - "8090:80"
+  web_2:
+    image: nginx:alpine
+    deploy:
+      replicas: 3
+    ports:
+      - "8091:80"    
