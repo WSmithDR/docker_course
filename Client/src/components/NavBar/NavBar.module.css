@@ -1,0 +1,33 @@
+/* NavBar.module.css */
+
+.navContainer {
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
+    background-color:transparent; /* Fondo oscuro */
+    padding: 10px 20px;
+    border-bottom: 1px solid #61dafb; /* Borde inferior con el color de Rick and Morty */
+  }
+
+.randomButton,
+.logoutButton {
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+  color: #61dafb;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  border-radius: 5px;
+  padding: 10px 15px;
+}
+
+.randomButton:hover,
+.logoutButton:hover {
+  background-color: #61dafb;
+  color: #fff;
+  transform: scale(1.1);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+  

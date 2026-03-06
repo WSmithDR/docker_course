@@ -1,0 +1,50 @@
+/* Login.module.css */
+
+.loginContainer {
+  background-color: transparent;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  color: white;
+  max-width: 300px; /* Reducir el ancho del contenedor */
+  margin: 0 auto; /* Centrar el contenedor horizontalmente */
+  display: flex;
+  flex-direction: column; /* Alinear los elementos verticalmente */
+  align-items: left; /* Centrar los elementos verticalmente */
+  justify-content: center; /* Centrar los elementos horizontalmente */
+  height: 100vh; /* Reducir la altura del contenedor */
+}
+
+.label {
+  text-align: left;
+  margin-bottom: 10px;
+  font-weight:bolder;
+}
+
+.inputField {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.error {
+  color: #ff0000;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.loginButton {
+  background-color: #61dafb;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.loginButton:hover {
+  background-color: #007acc;
+}

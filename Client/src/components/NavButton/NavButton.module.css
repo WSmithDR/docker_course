@@ -1,0 +1,22 @@
+/* NavButton.module.css */
+
+.navButton {
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    color: #61dafb; /* Color principal de Rick and Morty */
+    cursor: pointer;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: all 0.3s ease-in-out;
+    border-radius: 5px;
+    padding: 10px 20px;
+  }
+  
+  .navButton:hover {
+    background-color: #61dafb;
+    color: #fff; /* Cambia el color del texto al pasar el cursor */
+    transform: scale(1.1); /* Escala ligeramente el botón al pasar el cursor */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra al pasar el cursor */
+  }
+  
