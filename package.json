@@ -1,0 +1,17 @@
+{
+  "name": "docker_course",
+  "version": "1.0.0",
+  "description": "This repository contains my isolated practice environments to learn and assimilate Docker implementations. The project structure is designed to complement my study workflow, which relies heavily on **Active Recall** and **Spaced Repetition**.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --watch index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1"
+  }
+}
