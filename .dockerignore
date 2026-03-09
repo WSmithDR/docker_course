@@ -1,0 +1,38 @@
+# Dependencies
+node_modules
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+lerna-debug.log*
+.npm
+.yarn-cache
+
+# Environment
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.DS_Store
+Thumbs.db
+
+# Source control
+.git
+.gitignore
+
+# Docker
+*Dockerfile*
+*docker-compose*
+
+# Build artifacts
+build
+dist
+tmp
+logs
+artifacts
+coverage
+.nyc_output
+
+# IDE files
+.vscode
+.idea
